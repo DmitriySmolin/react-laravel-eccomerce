@@ -1,12 +1,15 @@
-import {Button} from "react-bootstrap";
+import React, {Fragment} from 'react';
+import {BrowserRouter} from "react-router-dom";
+import AppRoute from "./route/AppRoute";
 
 const App = () => {
-  return (
-      <div>
-        <Button variant="warning">Warning</Button>
-        <Button variant="info"><i className="fa fa-home"></i></Button>
-      </div>
-  );
+    return (
+        <Fragment>
+            <BrowserRouter>
+                <AppRoute/>
+            </BrowserRouter>
+        </Fragment>
+    );
 }
 
 export default App;
