@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
+import FeaturedProducts from "../components/home/FeaturedProducts";
 
 const HomePage = () => {
     return (
         <Fragment>
-            <h1>This is our Home Page</h1>
+            <FeaturedProducts/>
         </Fragment>
     );
 };
