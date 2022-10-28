@@ -7,8 +7,8 @@ const HomePage = () => {
     return (
         <Fragment>
             <FeaturedProducts/>
-            <Categories/>
             <Collection/>
+            <Categories/>
         </Fragment>
     );
 };
