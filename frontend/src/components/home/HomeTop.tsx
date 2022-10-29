@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Button, Card, Col, Container, Row} from "react-bootstrap";
 import MegaMenu from "./MegaMenu";
-import Slider from "./Slider";
+import HomeSlider from "./HomeSlider";
 
 const HomeTop = () => {
     return (
@@ -12,7 +12,7 @@ const HomeTop = () => {
                         <MegaMenu/>
                     </Col>
                     <Col lg={9} md={9} sm={12}>
-                        <Slider/>
+                        <HomeSlider/>
                     </Col>
                 </Row>
             </Container>
