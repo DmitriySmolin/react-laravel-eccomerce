@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 const Slider = () => {
     return (
-        <div>
-            
-        </div>
+        <Fragment>
+            <h1>Slider</h1>
+        </Fragment>
     );
 };
 
