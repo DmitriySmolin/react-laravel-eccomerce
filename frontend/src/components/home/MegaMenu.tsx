@@ -5,11 +5,10 @@ const MegaMenu = () => {
     useEffect(() => {
         megaMenu();
     }, [])
-
     const megaMenu = () => {
         const acc = document.getElementsByClassName('accordion');
         const accNum = acc.length;
-        var i;
+        var i: any;
         for ( i = 0; i < accNum; i++) {
             acc[i].addEventListener('click', function () {
                 this.classList.toggle('active');
