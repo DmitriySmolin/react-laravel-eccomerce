@@ -1,9 +1,32 @@
 import React, {Fragment, useState} from 'react'
-import {Navbar, Container, Row, Col, Button} from 'react-bootstrap';
+import {Navbar, Container, Row, Col, Button, NavLink} from 'react-bootstrap';
 import Logo from '../../assets/images/easyshop.png';
+import Bars from '../../assets/images/bars.png';
 import {Link} from "react-router-dom";
+import MegaMenuAll from '../home/MegaMenuAll';
 
 const NavMenuDesktop = () => {
+    const [sideNavState, setSideNavState] = useState('sideNavClose');
+    const [contentOverState, setContentOverState] = useState('contentOverlayClose');
+
+    const sideNavOpenClose = () => {
+        if (sideNavState === "sideNavOpen") {
+            setSideNavState("sideNavClose");
+            setContentOverState("contentOverlayClose");
+        } else {
+            setSideNavState("sideNavOpen");
+            setContentOverState("contentOverlayOpen");
+        }
+    }
+
+    const menuBarClickHandler = () => {
+        sideNavOpenClose();
+    }
+
+    const contentOverlayClickHandler = () => {
+        sideNavOpenClose();
+    }
+
     return (
         <Fragment>
             <div className="TopSectionDown">
@@ -11,7 +34,10 @@ const NavMenuDesktop = () => {
                     <Container fluid={"true"} className="fixed-top shadow-sm p-2 mb-0 bg-white">
                         <Row>
                             <Col lg={4} md={4} sm={12} xs={12}>
-                                <Link to="/"> <img className="nav-logo" src={Logo}/> </Link>
+                                <Button onClick={menuBarClickHandler} className="btn">
+                                    <i className="fa fa-bars"></i>
+                                </Button>
+                                <Link to="/"><img className="nav-logo" src={Logo}/></Link>
                             </Col>
                             <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
                                 <div className="input-group w-100">
@@ -35,6 +61,11 @@ const NavMenuDesktop = () => {
                         </Row>
                     </Container>
                 </Navbar>
+            </div>
+            <div className={sideNavState}>
+                <MegaMenuAll/>
+            </div>
+            <div onClick={contentOverlayClickHandler} className={contentOverState}>
             </div>
         </Fragment>
     );
