@@ -2,11 +2,12 @@
   border: none !important;
   border-radius: 0px !important;
 }
+
 .btn:focus {
   box-shadow: none;
 }
 
-.site-btn-login{
+.site-btn-login {
   font-weight: 300;
   padding: 5px;
   width: 100%;
@@ -15,8 +16,7 @@
   background: #051b35 !important;
 }
 
-
-.site-btn{
+.site-btn {
   font-weight: 300;
   padding: 5px;
   font-family: 'Roboto Condensed', sans-serif;
@@ -24,10 +24,9 @@
   background: #051b35 !important;
 }
 
-.site-btn:active{
+.site-btn:active {
   background: #051b35 !important;
 }
-
 
 .pure-material-button-contained {
   position: relative;
