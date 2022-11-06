@@ -5,6 +5,7 @@ import UserLoginPage from "../pages/UserLoginPage";
 import PurchasePage from "../pages/PurchasePage";
 import PrivacyPage from "../pages/PrivacyPage";
 import RefundPage from "../pages/RefundPage";
+import ProductDetails from "../components/productDetails/ProductDetails";
 
 const AppRoute = () => {
     return (
@@ -16,6 +17,7 @@ const AppRoute = () => {
                 <Route path="/purchase" element={<PurchasePage/>}/>
                 <Route path="/privacy" element={<PrivacyPage/>}/>
                 <Route path="/refund" element={<RefundPage/>}/>
+                <Route path="/product-details" element={<ProductDetails/>}/>
             </Routes>
         </Fragment>
     );
