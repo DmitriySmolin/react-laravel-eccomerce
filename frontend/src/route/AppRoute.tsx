@@ -8,6 +8,8 @@ import RefundPage from "../pages/RefundPage";
 import ProductDetails from "../components/productDetails/ProductDetails";
 import NotificationPage from "../pages/NotificationPage";
 import FavouritePage from "../pages/FavouritePage";
+import ContactPage from "../pages/ContactPage";
+import CartPage from "../pages/CartPage";
 
 const AppRoute = () => {
     return (
@@ -15,13 +17,14 @@ const AppRoute = () => {
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/login" element={<UserLoginPage/>}/>
-                <Route path="/contact" element={<UserLoginPage/>}/>
+                <Route path="/contact" element={<ContactPage/>}/>
                 <Route path="/purchase" element={<PurchasePage/>}/>
                 <Route path="/privacy" element={<PrivacyPage/>}/>
                 <Route path="/refund" element={<RefundPage/>}/>
                 <Route path="/product-details" element={<ProductDetails/>}/>
                 <Route path="/notification" element={<NotificationPage/>}/>
                 <Route path="/favourite" element={<FavouritePage/>}/>
+                <Route path="/cart" element={<CartPage/>}/>
             </Routes>
         </Fragment>
     );
