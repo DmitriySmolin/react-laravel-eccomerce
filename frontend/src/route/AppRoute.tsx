@@ -10,6 +10,7 @@ import NotificationPage from "../pages/NotificationPage";
 import FavouritePage from "../pages/FavouritePage";
 import ContactPage from "../pages/ContactPage";
 import CartPage from "../pages/CartPage";
+import AboutPage from "../pages/AboutPage";
 
 const AppRoute = () => {
     return (
@@ -21,6 +22,7 @@ const AppRoute = () => {
                 <Route path="/purchase" element={<PurchasePage/>}/>
                 <Route path="/privacy" element={<PrivacyPage/>}/>
                 <Route path="/refund" element={<RefundPage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
                 <Route path="/product-details" element={<ProductDetails/>}/>
                 <Route path="/notification" element={<NotificationPage/>}/>
                 <Route path="/favourite" element={<FavouritePage/>}/>

@@ -1,15 +1,15 @@
-import React, {Fragment, useEffect} from 'react'
+import React, {Component, Fragment, useEffect} from 'react'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
-import UserLogin from '../components/common/UserLogin'
+import About from '../components/others/About'
 
-
-const UserLoginPage = () => {
+const AboutPage = () => {
 
     useEffect(() => {
         window.scroll(0, 0)
+
     }, [])
 
     return (
@@ -17,18 +17,23 @@ const UserLoginPage = () => {
             <div className="Desktop">
                 <NavMenuDesktop/>
             </div>
+
             <div className="Mobile">
                 <NavMenuMobile/>
             </div>
-            <UserLogin/>
+
+            <About/>
+
             <div className="Desktop">
                 <FooterDesktop/>
             </div>
+
             <div className="Mobile">
                 <FooterMobile/>
             </div>
+
         </Fragment>
     )
 }
 
-export default UserLoginPage
+export default AboutPage
