@@ -1,343 +1,44 @@
 import React, {useEffect} from 'react';
+import {Link} from "react-router-dom";
 
-const MegaMenu = () => {
+const MegaMenu = (props: any) => {
 
-    const megaMenu = () => {
-        const acc = document.getElementsByClassName("accordion");
-        const accNum = acc.length;
-        for (var i = 0; i < accNum; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px"
-                }
-            })
+    const menuItemClick = (event: any) => {
+        event.target.classList.toggle("active");
+        const panel = event.target.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px"
         }
     }
-    useEffect(() => {
-        megaMenu();
-    }, [megaMenu])
+
+    const catList = props.data;
+    const myView = catList.map((catList: any, i: any) => {
+        return <div key={i.toString()}>
+            <button onClick={menuItemClick} className="accordion">
+                <img className="accordionMenuIcon" src={catList.category_image}/>&nbsp; {catList.category_name}
+            </button>
+            <div className="panel">
+                <ul>
+                    {
+                        (catList.subcategory_name).map((subList: any, i: any) => {
+                            return <li><Link
+                                to={"productsubcategory/" + catList.category_name + "/" + subList.subcategory_name}
+                                className="accordionItem">{subList.subcategory_name} </Link></li>
+                        })
+                    }
+                </ul>
+            </div>
+        </div>
+    });
 
     return (
         <div className="accordionMenuDiv">
             <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                {myView}
             </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="accordionMenuDivInside">
-                <button className="accordion" onClick={ megaMenu }>
-                    <img className="accordionMenuIcon" src="https://cdn-icons-png.flaticon.com/128/3917/3917317.png "
-                         alt="accordionMenu"/>&nbsp;
-                    Мужская одежда
-                </button>
-                <div className="panel">
-                    <ul>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="accordionItem">
-                                Мужские футболки 2
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     );
 };
