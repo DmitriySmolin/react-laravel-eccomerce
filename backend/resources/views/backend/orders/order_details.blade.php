@@ -85,10 +85,10 @@
                                                       style="background: #FF0000;">{{ $order->order_status }}</span>
                                             </li>
                                             <br>
-                                            @if($order->order_status == 'Pending')
+                                            @if($order->order_status == 'В ожидании')
                                                 <a href="{{ route('pending.processing',$order->id) }}"
                                                    class="btn btn-block btn-success">Обработать заказ</a>
-                                            @elseif($order->order_status == 'Processing')
+                                            @elseif($order->order_status == 'В процессе')
                                                 <a href="{{ route('processing.complete',$order->id) }}"
                                                    class="btn btn-block btn-success">Завершить заказ</a>
                                             @endif

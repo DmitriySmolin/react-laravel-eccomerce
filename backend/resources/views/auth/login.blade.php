@@ -18,7 +18,7 @@
     <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/assets/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/assets/css/icons.css') }}" rel="stylesheet">
-    <title>E-commerce Страница авторизациии </title>
+    <title>EasyShop Страница авторизациии </title>
 </head>
 
 <body class="bg-login">

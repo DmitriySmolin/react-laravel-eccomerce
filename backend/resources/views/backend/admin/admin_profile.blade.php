@@ -51,7 +51,7 @@
                                                 </svg>
                                                 Website
                                             </h6>
-                                            <span class="text-secondary">https://e-commerce.com</span>
+                                            <span class="text-secondary">https://easyshop.com</span>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">
@@ -64,7 +64,7 @@
                                                 </svg>
                                                 Twitter
                                             </h6>
-                                            <span class="text-secondary">@e-commerce</span>
+                                            <span class="text-secondary">@easyshop</span>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">
@@ -78,7 +78,7 @@
                                                 </svg>
                                                 Instagram
                                             </h6>
-                                            <span class="text-secondary">@e-commerce</span>
+                                            <span class="text-secondary">@easyshop</span>
                                         </li>
                                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                             <h6 class="mb-0">
@@ -91,7 +91,7 @@
                                                 </svg>
                                                 Facebook
                                             </h6>
-                                            <span class="text-secondary">@e-commerce</span>
+                                            <span class="text-secondary">@easyshop</span>
                                         </li>
                                     </ul>
                                 </div>

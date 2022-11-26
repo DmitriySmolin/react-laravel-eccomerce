@@ -1,12 +1,12 @@
 {
-  "short_name": "Ecommerce",
-  "name": "Ecommerce",
-  "description": "Ecommerce System",
-  "lang": "ru-Ru ",
+  "short_name": "Easy Ecommerce",
+  "name": "Easy Ecommerce",
+  "description": "Easy Ecommerce System",
+  "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#002e62",
   "orientation": "portrait",
+  "theme_color": "#002e62",
   "background_color": "#ffffff",
   "icons": [
     {
@@ -16,7 +16,7 @@
     },
     {
       "src": "96.png",
-      "sizes": "96x6",
+      "sizes": "96x96",
       "type": "image/png"
     },
     {
@@ -58,6 +58,6 @@
       "src": "512.png",
       "sizes": "512x512",
       "type": "image/png"
-    }
+    }     
   ]
 }
